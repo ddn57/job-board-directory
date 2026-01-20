@@ -391,3 +391,21 @@ footer a {
     font-size: 1.25rem;
   }
 }
+/* Header tagline */
+.tagline {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.tagline {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 1.2s ease-out;
+}
