@@ -35,9 +35,10 @@ body {
 header {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: white;
-  padding: 60px 20px;
+  padding: 60px 20px 80px; /* Added extra bottom padding to prevent crowding */
   text-align: center;
   position: relative;
+  z-index: 1; /* Keep header at base level */
 }
 
 .theme-toggle {
@@ -59,11 +60,15 @@ header {
 
 main {
   max-width: 1100px;
-  margin: -40px auto 40px;
+  margin: -40px auto 40px; /* This pulls the box up into the blue area */
   padding: 30px;
   background: var(--bg-card);
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  /* FIX: These two lines ensure the main content stays ON TOP of the blue banner */
+  position: relative;
+  z-index: 10;
 }
 
 .filter-container {
@@ -71,10 +76,11 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
+  padding-top: 5px; /* Extra space to ensure bubbles aren't cramped */
 }
 
 .chip {
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: var(--accent-light);
   border: 1px solid var(--border-color);
   border-radius: 20px;
@@ -99,6 +105,7 @@ main {
   background: var(--bg-card);
   color: var(--text-main);
   margin-bottom: 20px;
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
 }
 
 table {
@@ -139,6 +146,10 @@ td {
   display: inline-block;
 }
 
+.visit-btn:hover {
+  background: var(--primary-hover);
+}
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -165,7 +176,12 @@ footer {
   color: var(--text-muted);
 }
 
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+  main {
+    margin: -20px 15px 40px;
+    padding: 20px;
+  }
   table,
   thead,
   tbody,
@@ -181,6 +197,7 @@ footer {
     position: relative;
     padding-left: 45%;
     border: none;
+    min-height: 30px;
   }
   td::before {
     content: attr(data-label);
@@ -192,5 +209,6 @@ footer {
   tr {
     border-bottom: 2px solid var(--border-color);
     margin-bottom: 15px;
+    padding-bottom: 10px;
   }
 }
