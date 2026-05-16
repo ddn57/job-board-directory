@@ -8,114 +8,203 @@
   </head>
   <body>
     <header>
+      <button class="theme-toggle" id="themeToggle">🌓 Toggle Dark Mode</button>
       <h1>Job Board Directory</h1>
-      <p class="tagline">Sustainability, Impact, and Specialized. (Page 3 of 3)</p>
+      <p class="tagline">
+        Discover 45+ hand-picked job boards for your next career move.
+      </p>
     </header>
 
     <main>
-      <div class="controls-container">
-        <input type="text" id="searchInput" placeholder="Search this page..." />
+      <div class="filter-container">
+        <div class="chip active" data-filter="all">All Jobs</div>
+        <div class="chip" data-filter="Tech">Tech</div>
+        <div class="chip" data-filter="Remote">Remote</div>
+        <div class="chip" data-filter="Creative">Creative</div>
+        <div class="chip" data-filter="General">General</div>
       </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name, niche, or keywords..."
+      />
 
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Focus</th>
-            <th>Description</th>
             <th>Link</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td data-label="Name">Climatebase</td>
-            <td data-label="Focus">Climate Tech</td>
-            <td data-label="Description">The leading platform for jobs in climate and sustainability.</td>
-            <td data-label="Link"><a href="https://climatebase.org" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">ZipRecruiter</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Link">
+              <a
+                href="https://www.ziprecruiter.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Idealist</td>
-            <td data-label="Focus">Non-Profit</td>
-            <td data-label="Description">The top site for non-profit and social impact roles.</td>
-            <td data-label="Link"><a href="https://www.idealist.org" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">
+              FlexJobs <span class="badge-trending">Flexible</span>
+            </td>
+            <td data-label="Focus">Remote / Flexible</td>
+            <td data-label="Link">
+              <a
+                href="https://www.flexjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">80,000 Hours</td>
             <td data-label="Focus">High Impact</td>
-            <td data-label="Description">Jobs aimed at solving the world's most pressing problems.</td>
-            <td data-label="Link"><a href="https://80000hours.org" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a href="https://80000hours.org" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">GreenJobs</td>
-            <td data-label="Focus">Environmental</td>
-            <td data-label="Description">Focused on renewable energy and green technology.</td>
-            <td data-label="Link"><a href="https://www.greenjobs.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Built In</td>
+            <td data-label="Focus">Tech Hubs</td>
+            <td data-label="Link">
+              <a href="https://builtin.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Health eCareers</td>
-            <td data-label="Focus">Healthcare</td>
-            <td data-label="Description">Specialized for doctors, nurses, and medical staff.</td>
-            <td data-label="Link"><a href="https://www.healthecareers.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Working Not Working</td>
+            <td data-label="Focus">Creative</td>
+            <td data-label="Link">
+              <a
+                href="https://workingnotworking.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Monster</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Link">
+              <a
+                href="https://www.monster.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Nurse.com</td>
-            <td data-label="Focus">Nursing</td>
-            <td data-label="Description">Dedicated community and job board for nurses.</td>
-            <td data-label="Link"><a href="https://www.nurse.com/jobs" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Focus">Healthcare / Nursing</td>
+            <td data-label="Link">
+              <a
+                href="https://www.nurse.com/jobs"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">HigherEdJobs</td>
-            <td data-label="Focus">Education</td>
-            <td data-label="Description">Jobs at colleges and universities worldwide.</td>
-            <td data-label="Link"><a href="https://www.higheredjobs.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">SchoolSpring</td>
-            <td data-label="Focus">Education</td>
-            <td data-label="Description">Specialized for teachers and school administrators.</td>
-            <td data-label="Link"><a href="https://www.schoolspring.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">eFinancialCareers</td>
-            <td data-label="Focus">Finance</td>
-            <td data-label="Description">Top choice for banking, finance, and accounting.</td>
-            <td data-label="Link"><a href="https://www.efinancialcareers.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Upwork</td>
+            <td data-label="Focus">Freelance</td>
+            <td data-label="Link">
+              <a href="https://www.upwork.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">BrokerHunter</td>
             <td data-label="Focus">Finance</td>
-            <td data-label="Description">Connecting professionals with financial services firms.</td>
-            <td data-label="Link"><a href="https://www.brokerhunter.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.brokerhunter.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">USAJobs</td>
-            <td data-label="Focus">Government</td>
-            <td data-label="Description">The official site for federal government jobs in the US.</td>
-            <td data-label="Link"><a href="https://www.usajobs.gov" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">LawCrossing</td>
-            <td data-label="Focus">Legal</td>
-            <td data-label="Description">The largest collection of active legal jobs in the world.</td>
-            <td data-label="Link"><a href="https://www.lawcrossing.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">Poached Jobs</td>
-            <td data-label="Focus">Hospitality</td>
-            <td data-label="Description">The best job site for restaurant and bar professionals.</td>
-            <td data-label="Link"><a href="https://poachedjobs.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Remotive</td>
+            <td data-label="Focus">Remote Tech</td>
+            <td data-label="Link">
+              <a href="https://remotive.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">All Retail Jobs</td>
             <td data-label="Focus">Retail</td>
-            <td data-label="Description">The largest niche board for the retail industry.</td>
-            <td data-label="Link"><a href="https://www.allretailjobs.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.allretailjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Authentic Jobs</td>
+            <td data-label="Focus">Creative Tech</td>
+            <td data-label="Link">
+              <a
+                href="https://authenticjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">GoodWork</td>
             <td data-label="Focus">Sustainability</td>
-            <td data-label="Description">Canada's largest green job board.</td>
-            <td data-label="Link"><a href="https://www.goodwork.ca" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.goodwork.ca"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Fiverr</td>
+            <td data-label="Focus">Freelance / Gig</td>
+            <td data-label="Link">
+              <a href="https://www.fiverr.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Freelancer</td>
+            <td data-label="Focus">Freelance</td>
+            <td data-label="Link">
+              <a
+                href="https://www.freelancer.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
@@ -129,7 +218,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Job Board Directory | <a href="privacy.html">Privacy Policy</a></p>
+      <p>
+        &copy; 2026 Job Directory |
+        <a href="privacy.html" style="color: inherit">Privacy</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>

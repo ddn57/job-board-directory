@@ -8,114 +8,205 @@
   </head>
   <body>
     <header>
+      <button class="theme-toggle" id="themeToggle">🌓 Toggle Dark Mode</button>
       <h1>Job Board Directory</h1>
-      <p class="tagline">Remote, Creative, and Freelance. (Page 2 of 3)</p>
+      <p class="tagline">
+        Discover 45+ hand-picked job boards for your next career move.
+      </p>
     </header>
 
     <main>
-      <div class="controls-container">
-        <input type="text" id="searchInput" placeholder="Search this page..." />
+      <div class="filter-container">
+        <div class="chip active" data-filter="all">All Jobs</div>
+        <div class="chip" data-filter="Tech">Tech</div>
+        <div class="chip" data-filter="Remote">Remote</div>
+        <div class="chip" data-filter="Creative">Creative</div>
+        <div class="chip" data-filter="General">General</div>
       </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name, niche, or keywords..."
+      />
 
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Focus</th>
-            <th>Description</th>
             <th>Link</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td data-label="Name">We Work Remotely</td>
-            <td data-label="Focus">Remote</td>
-            <td data-label="Description">The largest community for finding remote work globally.</td>
-            <td data-label="Link"><a href="https://weworkremotely.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">LinkedIn Jobs</td>
+            <td data-label="Focus">Networking / General</td>
+            <td data-label="Link">
+              <a
+                href="https://www.linkedin.com/jobs"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Remote OK</td>
-            <td data-label="Focus">Remote</td>
-            <td data-label="Description">Popular board for tech-focused remote opportunities.</td>
-            <td data-label="Link"><a href="https://remoteok.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Health eCareers</td>
+            <td data-label="Focus">Healthcare</td>
+            <td data-label="Link">
+              <a
+                href="https://www.healthecareers.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">FlexJobs</td>
-            <td data-label="Focus">Flexible</td>
-            <td data-label="Description">Vetted remote and flexible jobs (requires subscription).</td>
-            <td data-label="Link"><a href="https://www.flexjobs.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">
+              Remote OK <span class="badge-trending">Remote</span>
+            </td>
+            <td data-label="Focus">Remote Tech</td>
+            <td data-label="Link">
+              <a href="https://remoteok.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Dribbble</td>
-            <td data-label="Focus">Design</td>
-            <td data-label="Description">The go-to for designers and visual creatives.</td>
-            <td data-label="Link"><a href="https://dribbble.com/jobs" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">CareerBuilder</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Link">
+              <a
+                href="https://www.careerbuilder.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Behance</td>
             <td data-label="Focus">Creative</td>
-            <td data-label="Description">Job listings from Adobe's creative portfolio network.</td>
-            <td data-label="Link"><a href="https://www.behance.net/joblist" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.behance.net/joblist"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Working Not Working</td>
-            <td data-label="Focus">Creative</td>
-            <td data-label="Description">Elite platform for creatives in advertising and media.</td>
-            <td data-label="Link"><a href="https://workingnotworking.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">eFinancialCareers</td>
+            <td data-label="Focus">Finance</td>
+            <td data-label="Link">
+              <a
+                href="https://www.efinancialcareers.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Upwork</td>
-            <td data-label="Focus">Freelance</td>
-            <td data-label="Description">Global marketplace for project-based freelance work.</td>
-            <td data-label="Link"><a href="https://www.upwork.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Dice</td>
+            <td data-label="Focus">Tech / IT</td>
+            <td data-label="Link">
+              <a href="https://www.dice.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Toptal</td>
-            <td data-label="Focus">Freelance</td>
-            <td data-label="Description">Exclusive network for top software engineers and designers.</td>
-            <td data-label="Link"><a href="https://www.toptal.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">Fiverr</td>
-            <td data-label="Focus">Gig Economy</td>
-            <td data-label="Description">Great for short-term projects and specific digital services.</td>
-            <td data-label="Link"><a href="https://www.fiverr.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Snagajob</td>
+            <td data-label="Focus">Hourly</td>
+            <td data-label="Link">
+              <a
+                href="https://www.snagajob.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Working Nomads</td>
             <td data-label="Focus">Remote</td>
-            <td data-label="Description">Curated remote digital jobs for travelers.</td>
-            <td data-label="Link"><a href="https://www.workingnomads.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.workingnomads.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Remotive</td>
-            <td data-label="Focus">Remote Tech</td>
-            <td data-label="Description">Hand-picked remote jobs in tech and support.</td>
-            <td data-label="Link"><a href="https://remotive.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">GreenJobs</td>
+            <td data-label="Focus">Environmental</td>
+            <td data-label="Link">
+              <a
+                href="https://www.greenjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Authentic Jobs</td>
-            <td data-label="Focus">Creative Tech</td>
-            <td data-label="Description">Job board for designers, developers, and creative pros.</td>
-            <td data-label="Link"><a href="https://authenticjobs.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">MediaBistro</td>
-            <td data-label="Focus">Media</td>
-            <td data-label="Description">Specialized in journalism, social media, and PR.</td>
-            <td data-label="Link"><a href="https://www.mediabistro.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">
+              Hired <span class="badge-trending">Tech</span>
+            </td>
+            <td data-label="Focus">Tech</td>
+            <td data-label="Link">
+              <a href="https://hired.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Guru</td>
             <td data-label="Focus">Freelance</td>
-            <td data-label="Description">A platform to find and hire talented freelancers globally.</td>
-            <td data-label="Link"><a href="https://www.guru.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a href="https://www.guru.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Freelancer</td>
-            <td data-label="Focus">Freelance</td>
-            <td data-label="Description">The world's largest freelancing and crowdsourcing marketplace.</td>
-            <td data-label="Link"><a href="https://www.freelancer.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">The Muse</td>
+            <td data-label="Focus">General / Culture</td>
+            <td data-label="Link">
+              <a href="https://themuse.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">SchoolSpring</td>
+            <td data-label="Focus">Education</td>
+            <td data-label="Link">
+              <a
+                href="https://www.schoolspring.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Crunchboard</td>
+            <td data-label="Focus">Tech</td>
+            <td data-label="Link">
+              <a
+                href="https://www.crunchboard.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
@@ -130,7 +221,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Job Board Directory | <a href="privacy.html">Privacy Policy</a></p>
+      <p>
+        &copy; 2026 Job Directory |
+        <a href="privacy.html" style="color: inherit">Privacy</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>

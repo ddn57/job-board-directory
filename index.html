@@ -8,119 +8,214 @@
   </head>
   <body>
     <header>
+      <button class="theme-toggle" id="themeToggle">🌓 Toggle Dark Mode</button>
       <h1>Job Board Directory</h1>
-      <p class="tagline">The job search begins here. (Page 1 of 3)</p>
+      <p class="tagline">
+        Discover 45+ hand-picked job boards for your next career move.
+      </p>
     </header>
 
     <main>
-      <div class="controls-container">
-        <input type="text" id="searchInput" placeholder="Search this page..." />
+      <div class="filter-container">
+        <div class="chip active" data-filter="all">All Jobs</div>
+        <div class="chip" data-filter="Tech">Tech</div>
+        <div class="chip" data-filter="Remote">Remote</div>
+        <div class="chip" data-filter="Creative">Creative</div>
+        <div class="chip" data-filter="General">General</div>
       </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name, niche, or keywords..."
+      />
 
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Focus</th>
-            <th>Description</th>
             <th>Link</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td data-label="Name">Indeed</td>
+            <td data-label="Name">
+              Indeed <span class="badge-trending">Popular</span>
+            </td>
             <td data-label="Focus">General</td>
-            <td data-label="Description">The world's largest job aggregator across all industries.</td>
-            <td data-label="Link"><a href="https://www.indeed.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a href="https://www.indeed.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">LinkedIn Jobs</td>
-            <td data-label="Focus">Networking</td>
-            <td data-label="Description">Job listings integrated with professional networking.</td>
-            <td data-label="Link"><a href="https://www.linkedin.com/jobs" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Climatebase</td>
+            <td data-label="Focus">Climate Tech</td>
+            <td data-label="Link">
+              <a
+                href="https://climatebase.org"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">
+              We Work Remotely <span class="badge-trending">Remote</span>
+            </td>
+            <td data-label="Focus">Remote</td>
+            <td data-label="Link">
+              <a
+                href="https://weworkremotely.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">USAJobs</td>
+            <td data-label="Focus">Government</td>
+            <td data-label="Link">
+              <a
+                href="https://www.usajobs.gov"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Dribbble</td>
+            <td data-label="Focus">Creative / Design</td>
+            <td data-label="Link">
+              <a
+                href="https://dribbble.com/jobs"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Glassdoor</td>
             <td data-label="Focus">Reviews & Jobs</td>
-            <td data-label="Description">Research company culture and salaries while you search.</td>
-            <td data-label="Link"><a href="https://www.glassdoor.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.glassdoor.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Wellfound</td>
-            <td data-label="Focus">Startups</td>
-            <td data-label="Description">Best for startup jobs and equity. Formerly AngelList.</td>
-            <td data-label="Link"><a href="https://wellfound.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Poached Jobs</td>
+            <td data-label="Focus">Hospitality</td>
+            <td data-label="Link">
+              <a
+                href="https://poachedjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">ZipRecruiter</td>
-            <td data-label="Focus">General</td>
-            <td data-label="Description">AI-driven matching to connect you with employers fast.</td>
-            <td data-label="Link"><a href="https://www.ziprecruiter.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">
+              Wellfound <span class="badge-trending">Startups</span>
+            </td>
+            <td data-label="Focus">Tech / Startups</td>
+            <td data-label="Link">
+              <a href="https://wellfound.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">HigherEdJobs</td>
+            <td data-label="Focus">Education</td>
+            <td data-label="Link">
+              <a
+                href="https://www.higheredjobs.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td data-label="Name">Toptal</td>
+            <td data-label="Focus">Freelance Tech</td>
+            <td data-label="Link">
+              <a href="https://www.toptal.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">Otta</td>
             <td data-label="Focus">Tech</td>
-            <td data-label="Description">Curated roles at the world's most innovative tech companies.</td>
-            <td data-label="Link"><a href="https://otta.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a href="https://otta.com" target="_blank" class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Dice</td>
-            <td data-label="Focus">Tech / IT</td>
-            <td data-label="Description">The go-to site for software engineers and data pros.</td>
-            <td data-label="Link"><a href="https://www.dice.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">LawCrossing</td>
+            <td data-label="Focus">Legal</td>
+            <td data-label="Link">
+              <a
+                href="https://www.lawcrossing.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
             <td data-label="Name">SimplyHired</td>
             <td data-label="Focus">General</td>
-            <td data-label="Description">Aggregates millions of jobs from all over the web.</td>
-            <td data-label="Link"><a href="https://www.simplyhired.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Link">
+              <a
+                href="https://www.simplyhired.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Monster</td>
-            <td data-label="Focus">General</td>
-            <td data-label="Description">A global leader in connecting people and jobs.</td>
-            <td data-label="Link"><a href="https://www.monster.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">MediaBistro</td>
+            <td data-label="Focus">Creative / Media</td>
+            <td data-label="Link">
+              <a
+                href="https://www.mediabistro.com"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
           <tr>
-            <td data-label="Name">Built In</td>
-            <td data-label="Focus">Tech Hubs</td>
-            <td data-label="Description">Local tech communities and jobs in major US tech cities.</td>
-            <td data-label="Link"><a href="https://builtin.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">Hired</td>
-            <td data-label="Focus">Tech</td>
-            <td data-label="Description">A platform where companies apply to interview you.</td>
-            <td data-label="Link"><a href="https://hired.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">Crunchboard</td>
-            <td data-label="Focus">Tech</td>
-            <td data-label="Description">The official job board for TechCrunch.</td>
-            <td data-label="Link"><a href="https://www.crunchboard.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">CareerBuilder</td>
-            <td data-label="Focus">General</td>
-            <td data-label="Description">One of the largest and oldest job boards in the US.</td>
-            <td data-label="Link"><a href="https://www.careerbuilder.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">Snagajob</td>
-            <td data-label="Focus">Hourly</td>
-            <td data-label="Description">The #1 site for hourly and part-time service jobs.</td>
-            <td data-label="Link"><a href="https://www.snagajob.com" target="_blank" class="visit-btn">Visit</a></td>
-          </tr>
-          <tr>
-            <td data-label="Name">The Muse</td>
-            <td data-label="Focus">General</td>
-            <td data-label="Description">Jobs plus deep dives into company culture and office photos.</td>
-            <td data-label="Link"><a href="https://themuse.com" target="_blank" class="visit-btn">Visit</a></td>
+            <td data-label="Name">Idealist</td>
+            <td data-label="Focus">Non-Profit</td>
+            <td data-label="Link">
+              <a
+                href="https://www.idealist.org"
+                target="_blank"
+                class="visit-btn"
+                >Visit</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Pagination Controls -->
       <div class="pagination">
         <span class="page-btn active">1</span>
         <a href="page2.html" class="page-btn">2</a>
@@ -130,7 +225,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Job Board Directory | <a href="privacy.html">Privacy Policy</a></p>
+      <p>
+        &copy; 2026 Job Directory |
+        <a href="privacy.html" style="color: inherit">Privacy</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>

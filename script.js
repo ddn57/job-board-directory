@@ -1,45 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
-  const rows = document.querySelectorAll("table tbody tr");
+  const rows = document.querySelectorAll("tbody tr");
+  const chips = document.querySelectorAll(".chip");
+  const themeToggle = document.getElementById("themeToggle");
 
-  /* --- 1. Real-time Search --- */
-  if (searchInput) {
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      rows.forEach(row => {
-        const text = row.innerText.toLowerCase();
-        row.style.display = text.includes(query) ? "" : "none";
-      });
+  // 1. Dark Mode Toggle
+  const currentTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", currentTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      let theme = document.documentElement.getAttribute("data-theme");
+      let newTheme = theme === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
     });
   }
 
-  /* --- 2. Dynamic Fly-in Animation --- */
-  // This automatically makes rows fly in one by one on every page
-  rows.forEach((row, index) => {
-    row.style.animationDelay = `${index * 0.05}s`;
+  // 2. Search Functionality
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      filterJobs(query, null);
+    });
+  }
+
+  // 3. Category Chip Filtering
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      const category = chip.getAttribute("data-filter");
+      filterJobs(searchInput.value.toLowerCase(), category);
+    });
   });
 
-  /* --- 3. Cookie Management (Shared across all pages) --- */
-  function setCookie(name, value, days) {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString();
-    document.cookie = name + "=" + value + "; expires=" + expires + "; path=/; SameSite=Lax";
-  }
+  function filterJobs(query, category) {
+    rows.forEach((row) => {
+      const text = row.innerText.toLowerCase();
+      const focus = row
+        .querySelector('[data-label="Focus"]')
+        .innerText.toLowerCase();
 
-  function getCookie(name) {
-    return document.cookie.split("; ").find(row => row.startsWith(name + "="))?.split("=")[1];
-  }
+      const matchesSearch = text.includes(query);
+      const matchesCategory =
+        !category ||
+        category === "all" ||
+        focus.includes(category.toLowerCase());
 
-  const banner = document.getElementById("cookie-banner");
-  if (!getCookie("analytics_consent") && banner) {
-    banner.style.display = "block";
-  }
-
-  // Add click events for your cookie buttons here (reuse your old button IDs)
-  const acceptAllBtn = document.getElementById("accept-all");
-  if (acceptAllBtn) {
-    acceptAllBtn.onclick = function() {
-      setCookie("analytics_consent", "accepted", 180);
-      banner.style.display = "none";
-    };
+      if (matchesSearch && matchesCategory) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
   }
 });
