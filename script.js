@@ -3,56 +3,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const rows = document.querySelectorAll("tbody tr");
   const chips = document.querySelectorAll(".chip");
   const themeToggle = document.getElementById("themeToggle");
+  const privacyBanner = document.getElementById("privacyBanner");
+  const acceptBtn = document.getElementById("acceptPrivacy");
+  const rejectBtn = document.getElementById("rejectPrivacy");
 
-  // 1. Dark Mode Toggle
+  // 1. Theme Logic
   const currentTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", currentTheme);
-
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      let theme = document.documentElement.getAttribute("data-theme");
-      let newTheme = theme === "light" ? "dark" : "light";
+      const newTheme =
+        document.documentElement.getAttribute("data-theme") === "light"
+          ? "dark"
+          : "light";
       document.documentElement.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
     });
   }
 
-  // 2. Search Functionality
-  if (searchInput) {
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      filterJobs(query, null);
+  // 2. Privacy Choice Logic
+  if (privacyBanner && !localStorage.getItem("privacyChoice")) {
+    setTimeout(() => privacyBanner.classList.add("show"), 1000);
+  }
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("privacyChoice", "accepted");
+      privacyBanner.classList.remove("show");
+    });
+  }
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem("privacyChoice", "rejected");
+      privacyBanner.classList.remove("show");
     });
   }
 
-  // 3. Category Chip Filtering
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      chips.forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      const category = chip.getAttribute("data-filter");
-      filterJobs(searchInput.value.toLowerCase(), category);
-    });
-  });
+  // 3. Filter Logic
+  function filterJobs() {
+    const query = searchInput.value.toLowerCase();
+    const activeChip = document.querySelector(".chip.active");
+    const category = activeChip.getAttribute("data-filter").toLowerCase();
 
-  function filterJobs(query, category) {
     rows.forEach((row) => {
       const text = row.innerText.toLowerCase();
       const focus = row
         .querySelector('[data-label="Focus"]')
         .innerText.toLowerCase();
-
       const matchesSearch = text.includes(query);
-      const matchesCategory =
-        !category ||
-        category === "all" ||
-        focus.includes(category.toLowerCase());
-
-      if (matchesSearch && matchesCategory) {
-        row.style.display = "";
-      } else {
-        row.style.display = "none";
-      }
+      const matchesCategory = category === "all" || focus.includes(category);
+      row.style.display = matchesSearch && matchesCategory ? "" : "none";
     });
   }
+
+  if (searchInput) searchInput.addEventListener("input", filterJobs);
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      filterJobs();
+    });
+  });
 });
