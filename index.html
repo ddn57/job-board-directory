@@ -3,28 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Job Board Directory</title>
+    <title>Job Board Directory - Page 1</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1>Job Board Directory</h1>
-      <p class="tagline">The job search begins here.</p>
+      <p class="tagline">The job search begins here. (Page 1 of 3)</p>
     </header>
 
     <main>
-      <div class="filter-container">
-        <label for="categoryFilter">Filter by Category:</label>
-        <select id="categoryFilter">
-          <option value="All">All</option>
-          <option value="Remote">Remote</option>
-          <option value="Tech">Tech</option>
-          <option value="Creative">Creative</option>
-          <option value="Freelance">Freelance</option>
-          <option value="Healthcare">Healthcare</option>
-          <option value="Sustainability">Sustainability</option>
-          <option value="General">General</option>
-        </select>
+      <div class="controls-container">
+        <input type="text" id="searchInput" placeholder="Search this page..." />
       </div>
 
       <table>
@@ -37,250 +27,111 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-category="General">
+          <tr>
             <td data-label="Name">Indeed</td>
-            <td data-label="Focus">General Jobs</td>
-            <td data-label="Description">
-              One of the largest job boards covering nearly all industries
-              worldwide.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.indeed.com" target="_blank">Visit</a>
-            </td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">The world's largest job aggregator across all industries.</td>
+            <td data-label="Link"><a href="https://www.indeed.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Tech">
+          <tr>
             <td data-label="Name">LinkedIn Jobs</td>
-            <td data-label="Focus">Professional Networking</td>
-            <td data-label="Description">
-              Job listings integrated with LinkedIn profiles and networking
-              opportunities.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.linkedin.com/jobs" target="_blank">Visit</a>
-            </td>
+            <td data-label="Focus">Networking</td>
+            <td data-label="Description">Job listings integrated with professional networking.</td>
+            <td data-label="Link"><a href="https://www.linkedin.com/jobs" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="General">
+          <tr>
             <td data-label="Name">Glassdoor</td>
-            <td data-label="Focus">Company Reviews & Jobs</td>
-            <td data-label="Description">
-              Jobs plus employee reviews and salary insights for companies.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.glassdoor.com/Job/index.htm" target="_blank"
-                >Visit</a
-              >
-            </td>
+            <td data-label="Focus">Reviews & Jobs</td>
+            <td data-label="Description">Research company culture and salaries while you search.</td>
+            <td data-label="Link"><a href="https://www.glassdoor.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="General">
-            <td data-label="Name">Monster</td>
-            <td data-label="Focus">General Jobs</td>
-            <td data-label="Description">
-              Classic job board covering a wide variety of industries globally.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.monster.com" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">Wellfound</td>
+            <td data-label="Focus">Startups</td>
+            <td data-label="Description">Best for startup jobs and equity. Formerly AngelList.</td>
+            <td data-label="Link"><a href="https://wellfound.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Remote">
-            <td data-label="Name">We Work Remotely</td>
-            <td data-label="Focus">Remote Jobs</td>
-            <td data-label="Description">
-              A leading site for remote work opportunities across tech and
-              non-tech roles.
-            </td>
-            <td data-label="Link">
-              <a href="https://weworkremotely.com" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">ZipRecruiter</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">AI-driven matching to connect you with employers fast.</td>
+            <td data-label="Link"><a href="https://www.ziprecruiter.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Remote">
-            <td data-label="Name">Remote OK</td>
-            <td data-label="Focus">Remote Jobs</td>
-            <td data-label="Description">
-              Curated listings for remote jobs in tech, marketing, and design.
-            </td>
-            <td data-label="Link">
-              <a href="https://remoteok.io" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">Otta</td>
+            <td data-label="Focus">Tech</td>
+            <td data-label="Description">Curated roles at the world's most innovative tech companies.</td>
+            <td data-label="Link"><a href="https://otta.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Tech">
-            <td data-label="Name">AngelList</td>
-            <td data-label="Focus">Startups & Tech</td>
-            <td data-label="Description">
-              Jobs at startups, tech companies, and remote-friendly startups.
-            </td>
-            <td data-label="Link">
-              <a href="https://angel.co/jobs" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Tech">
-            <td data-label="Name">Stack Overflow Jobs</td>
-            <td data-label="Focus">Tech / Developers</td>
-            <td data-label="Description">
-              Tech-specific job listings with focus on software development
-              roles.
-            </td>
-            <td data-label="Link">
-              <a href="https://stackoverflow.com/jobs" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Creative">
-            <td data-label="Name">Dribbble Jobs</td>
-            <td data-label="Focus">Creative / Design</td>
-            <td data-label="Description">
-              Job listings for designers, UX/UI, and other creative
-              professionals.
-            </td>
-            <td data-label="Link">
-              <a href="https://dribbble.com/jobs" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Creative">
-            <td data-label="Name">Behance Job Board</td>
-            <td data-label="Focus">Creative / Design</td>
-            <td data-label="Description">
-              Creative projects and job opportunities for designers and artists.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.behance.net/joblist" target="_blank"
-                >Visit</a
-              >
-            </td>
-          </tr>
-
-          <tr data-category="Freelance">
-            <td data-label="Name">Upwork</td>
-            <td data-label="Focus">Freelance / Remote</td>
-            <td data-label="Description">
-              Marketplace for freelance jobs in multiple categories worldwide.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.upwork.com" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Freelance">
-            <td data-label="Name">Fiverr</td>
-            <td data-label="Focus">Freelance / Gigs</td>
-            <td data-label="Description">
-              Freelance microjobs and gigs across a wide variety of skills and
-              industries.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.fiverr.com" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Freelance">
-            <td data-label="Name">Toptal</td>
-            <td data-label="Focus">Freelance / Top Talent</td>
-            <td data-label="Description">
-              Exclusive platform for top freelancers in software, design, and
-              finance.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.toptal.com" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="Tech">
+          <tr>
             <td data-label="Name">Dice</td>
             <td data-label="Focus">Tech / IT</td>
-            <td data-label="Description">
-              Technology-focused job board for developers, engineers, and IT
-              professionals.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.dice.com" target="_blank">Visit</a>
-            </td>
+            <td data-label="Description">The go-to site for software engineers and data pros.</td>
+            <td data-label="Link"><a href="https://www.dice.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Remote">
-            <td data-label="Name">FlexJobs</td>
-            <td data-label="Focus">Remote / Flexible</td>
-            <td data-label="Description">
-              Curated remote, part-time, and flexible jobs. Paid membership
-              required for full access.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.flexjobs.com" target="_blank">Visit</a>
-            </td>
-          </tr>
-
-          <tr data-category="General">
+          <tr>
             <td data-label="Name">SimplyHired</td>
-            <td data-label="Focus">General Jobs</td>
-            <td data-label="Description">
-              Aggregates job listings from across the web for multiple
-              industries.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.simplyhired.com" target="_blank">Visit</a>
-            </td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">Aggregates millions of jobs from all over the web.</td>
+            <td data-label="Link"><a href="https://www.simplyhired.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Remote">
-            <td data-label="Name">Jobbatical</td>
-            <td data-label="Focus">International / Remote</td>
-            <td data-label="Description">
-              Global jobs for tech and creative professionals seeking
-              international work experiences.
-            </td>
-            <td data-label="Link">
-              <a href="https://jobbatical.com" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">Monster</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">A global leader in connecting people and jobs.</td>
+            <td data-label="Link"><a href="https://www.monster.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Sustainability">
-            <td data-label="Name">GreenJobs</td>
-            <td data-label="Focus">Sustainability / Green Careers</td>
-            <td data-label="Description">
-              Jobs focused on renewable energy, environmental organizations, and
-              sustainability.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.greenjobs.com" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">Built In</td>
+            <td data-label="Focus">Tech Hubs</td>
+            <td data-label="Description">Local tech communities and jobs in major US tech cities.</td>
+            <td data-label="Link"><a href="https://builtin.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
-
-          <tr data-category="Healthcare">
-            <td data-label="Name">Medzilla</td>
-            <td data-label="Focus">Healthcare / Pharma</td>
-            <td data-label="Description">
-              Job board for medical, healthcare, and pharmaceutical careers.
-            </td>
-            <td data-label="Link">
-              <a href="https://www.medzilla.com" target="_blank">Visit</a>
-            </td>
+          <tr>
+            <td data-label="Name">Hired</td>
+            <td data-label="Focus">Tech</td>
+            <td data-label="Description">A platform where companies apply to interview you.</td>
+            <td data-label="Link"><a href="https://hired.com" target="_blank" class="visit-btn">Visit</a></td>
+          </tr>
+          <tr>
+            <td data-label="Name">Crunchboard</td>
+            <td data-label="Focus">Tech</td>
+            <td data-label="Description">The official job board for TechCrunch.</td>
+            <td data-label="Link"><a href="https://www.crunchboard.com" target="_blank" class="visit-btn">Visit</a></td>
+          </tr>
+          <tr>
+            <td data-label="Name">CareerBuilder</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">One of the largest and oldest job boards in the US.</td>
+            <td data-label="Link"><a href="https://www.careerbuilder.com" target="_blank" class="visit-btn">Visit</a></td>
+          </tr>
+          <tr>
+            <td data-label="Name">Snagajob</td>
+            <td data-label="Focus">Hourly</td>
+            <td data-label="Description">The #1 site for hourly and part-time service jobs.</td>
+            <td data-label="Link"><a href="https://www.snagajob.com" target="_blank" class="visit-btn">Visit</a></td>
+          </tr>
+          <tr>
+            <td data-label="Name">The Muse</td>
+            <td data-label="Focus">General</td>
+            <td data-label="Description">Jobs plus deep dives into company culture and office photos.</td>
+            <td data-label="Link"><a href="https://themuse.com" target="_blank" class="visit-btn">Visit</a></td>
           </tr>
         </tbody>
       </table>
+
+      <!-- Pagination Controls -->
+      <div class="pagination">
+        <span class="page-btn active">1</span>
+        <a href="page2.html" class="page-btn">2</a>
+        <a href="page3.html" class="page-btn">3</a>
+        <a href="page2.html" class="page-btn">Next →</a>
+      </div>
     </main>
 
     <footer>
-      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p>&copy; 2026 Job Board Directory | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
-      <span>
-        We use cookies for analytics and (in the future) advertising. See our
-        <a href="privacy.html">Privacy Policy</a>.
-      </span>
-      <div class="cookie-buttons">
-        <button id="accept-all">Accept all</button>
-        <button id="accept-analytics">Accept analytics only</button>
-        <button id="reject-all">Reject all</button>
-      </div>
-    </div>
 
     <script src="script.js"></script>
   </body>
