@@ -19,11 +19,7 @@
 }
 
 body {
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-body);
   color: var(--text-main);
   margin: 0;
@@ -91,7 +87,7 @@ main {
 }
 .cookie-text {
   font-size: 0.9rem;
-  color: var(--text-main);
+  line-height: 1.4;
   margin-right: 20px;
 }
 .cookie-text a {
@@ -104,7 +100,7 @@ main {
   gap: 10px;
 }
 
-/* Filter Chips */
+/* Table & UI */
 .filter-container {
   display: flex;
   flex-wrap: wrap;
@@ -118,11 +114,9 @@ main {
   border-radius: 20px;
   font-size: 0.85rem;
   cursor: pointer;
-  color: var(--text-main);
   transition: 0.2s;
 }
-.chip.active,
-.chip:hover {
+.chip.active {
   background: var(--primary);
   color: white;
 }
@@ -161,8 +155,6 @@ td {
   padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
   border: none;
   cursor: pointer;
 }
@@ -172,7 +164,6 @@ td {
   color: var(--text-main);
   padding: 8px 16px;
   border-radius: 8px;
-  font-weight: 500;
   cursor: pointer;
 }
 
@@ -193,7 +184,6 @@ td {
 .page-btn.active {
   background: var(--primary);
   color: white;
-  border-color: var(--primary);
 }
 
 footer {
@@ -228,7 +218,6 @@ footer {
     position: relative;
     padding-left: 45%;
     border: none;
-    min-height: 30px;
   }
   td::before {
     content: attr(data-label);

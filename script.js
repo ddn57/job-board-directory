@@ -1,13 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  const rows = document.querySelectorAll("tbody tr");
-  const chips = document.querySelectorAll(".chip");
+  // --- SELECTIONS ---
   const themeToggle = document.getElementById("themeToggle");
   const privacyBanner = document.getElementById("privacyBanner");
   const acceptBtn = document.getElementById("acceptPrivacy");
   const rejectBtn = document.getElementById("rejectPrivacy");
+  const searchInput = document.getElementById("searchInput");
+  const rows = document.querySelectorAll("tbody tr");
+  const chips = document.querySelectorAll(".chip");
 
-  // 1. Theme Logic
+  // --- 1. TRACKING GATEKEEPER ---
+  function loadTracking() {
+    console.log("Privacy: User Accepted. Loading Analytics...");
+    // Replace 'G-XXXXX' with your actual Google Analytics ID
+    const gaID = "G-XXXXX";
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaID}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", gaID);
+  }
+
+  // --- 2. PRIVACY CHOICE LOGIC ---
+  const choice = localStorage.getItem("privacyChoice");
+  if (choice === "accepted") {
+    loadTracking();
+  } else if (!choice) {
+    setTimeout(() => privacyBanner.classList.add("show"), 1000);
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("privacyChoice", "accepted");
+      privacyBanner.classList.remove("show");
+      loadTracking();
+    });
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem("privacyChoice", "rejected");
+      privacyBanner.classList.remove("show");
+      console.log("Privacy: User Rejected Tracking.");
+    });
+  }
+
+  // --- 3. THEME LOGIC ---
   const currentTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", currentTheme);
   if (themeToggle) {
@@ -21,28 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Privacy Choice Logic
-  if (privacyBanner && !localStorage.getItem("privacyChoice")) {
-    setTimeout(() => privacyBanner.classList.add("show"), 1000);
-  }
-  if (acceptBtn) {
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("privacyChoice", "accepted");
-      privacyBanner.classList.remove("show");
-    });
-  }
-  if (rejectBtn) {
-    rejectBtn.addEventListener("click", () => {
-      localStorage.setItem("privacyChoice", "rejected");
-      privacyBanner.classList.remove("show");
-    });
-  }
-
-  // 3. Filter Logic
+  // --- 4. FILTER/SEARCH LOGIC ---
   function filterJobs() {
     const query = searchInput.value.toLowerCase();
-    const activeChip = document.querySelector(".chip.active");
-    const category = activeChip.getAttribute("data-filter").toLowerCase();
+    const category = document
+      .querySelector(".chip.active")
+      .getAttribute("data-filter")
+      .toLowerCase();
 
     rows.forEach((row) => {
       const text = row.innerText.toLowerCase();
