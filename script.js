@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 1. TRACKING GATEKEEPER ---
   function loadTracking() {
     console.log("Privacy: User Accepted. Loading Analytics...");
-    // Replace 'G-XXXXX' with your actual Google Analytics ID
-    const gaID = "G-XXXXX";
+
+    const gaID = "G-ME7Y9G5P5N";
 
     const script = document.createElement("script");
     script.async = true;
